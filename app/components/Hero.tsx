@@ -12,46 +12,51 @@ type Tab = {
   video: { mp4: string; webm: string };
 };
 
-// TODO: only the "team-sharing" video was captured from the source site.
-// Swap in the real per-tab videos when available.
-const SHARED_VIDEO = {
-  mp4: "https://soloterm.com/videos/v2-share.mp4?v=5",
-  webm: "https://soloterm.com/videos/v2-share.webm?v=5",
-};
-
 const TABS: Tab[] = [
   {
     id: "agents",
     label: "Agents",
-    iconActive: "/assets/agents-inactive.svg",
+    iconActive: "/assets/agents-active.svg",
     iconInactive: "/assets/agents-inactive.svg",
-    video: SHARED_VIDEO,
+    video: {
+      mp4: "/assets/videos/v2-agents.mp4",
+      webm: "/assets/videos/v2-agents.webm",
+    },
   },
   {
     id: "projects",
     label: "Projects",
-    iconActive: "/assets/projects-inactive.svg",
+    iconActive: "/assets/projects-active.svg",
     iconInactive: "/assets/projects-inactive.svg",
-    video: SHARED_VIDEO,
+    video: {
+      mp4: "/assets/videos/v2-projects.mp4",
+      webm: "/assets/videos/v2-projects.webm",
+    },
   },
   {
     id: "commands",
     label: "Commands",
-    iconActive: "/assets/processes-inactive.svg",
+    iconActive: "/assets/processes-active.svg",
     iconInactive: "/assets/processes-inactive.svg",
-    video: SHARED_VIDEO,
+    video: {
+      mp4: "/assets/videos/v2-processes.mp4",
+      webm: "/assets/videos/v2-processes.webm",
+    },
   },
   {
     id: "team-sharing",
     label: "Team Sharing",
     iconActive: "/assets/team-active.svg",
-    iconInactive: "/assets/team-active.svg",
-    video: SHARED_VIDEO,
+    iconInactive: "/assets/team-inactive.svg",
+    video: {
+      mp4: "/assets/videos/v2-share.mp4",
+      webm: "/assets/videos/v2-share.webm",
+    },
   },
 ];
 
 export default function Hero() {
-  const [active, setActive] = useState<TabId>("team-sharing");
+  const [active, setActive] = useState<TabId>("agents");
 
   function onTablistKeyDown(e: KeyboardEvent<HTMLDivElement>) {
     const idx = TABS.findIndex((t) => t.id === active);
