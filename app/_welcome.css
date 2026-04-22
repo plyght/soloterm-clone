@@ -1,0 +1,26 @@
+.marquee-track {
+  display: inline-flex;
+  animation: marquee-1c5b935b 106s linear infinite;
+}
+.marquee-track--reverse {
+  animation: marquee-reverse-1c5b935b 50s linear infinite;
+}
+@keyframes marquee-1c5b935b {
+  0% {
+    transform: translateZ(0);
+  }
+  to {
+    transform: translate3d(var(--marquee-width, -50%), 0, 0);
+  }
+}
+@keyframes marquee-reverse-1c5b935b {
+  0% {
+    transform: translate3d(var(--marquee-width, -50%), 0, 0);
+  }
+  to {
+    transform: translateZ(0);
+  }
+}
+.marquee-content {
+  flex-shrink: 0;
+}

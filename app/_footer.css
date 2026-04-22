@@ -1,0 +1,24 @@
+.fade-enter-active[data-v-4c7cab24],
+.fade-leave-active[data-v-4c7cab24] {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from[data-v-4c7cab24],
+.fade-leave-to[data-v-4c7cab24] {
+  opacity: 0;
+}
+.menu-line[data-v-4c7cab24] {
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.menu-open-top[data-v-4c7cab24] {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-open-middle[data-v-4c7cab24] {
+  opacity: 0;
+}
+.menu-open-bottom[data-v-4c7cab24] {
+  transform: translateY(-6px) rotate(-45deg);
+}
